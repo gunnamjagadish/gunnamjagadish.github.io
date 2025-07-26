@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Number Learning Game (1-100)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Learn Numbers 1 to 100!</h1>
+
+  <!-- Bear cartoon container -->
+  <div id="bear-container" aria-hidden="true" role="img" aria-label="Cute bear character">
+    <!-- Inline SVG of bear with separate face parts for animation -->
+    <svg id="bear" width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title">
+      <title>Cute bear cartoon</title>
+      
+      <!-- Bear head -->
+      <circle cx="75" cy="75" r="70" fill="#8B5E3C" stroke="#654321" stroke-width="3" />
+      
+      <!-- Ears -->
+      <circle cx="35" cy="35" r="20" fill="#8B5E3C" />
+      <circle cx="115" cy="35" r="20" fill="#8B5E3C" />
+      <circle cx="35" cy="35" r="12" fill="#E6C9B4" />
+      <circle cx="115" cy="35" r="12" fill="#E6C9B4" />
+
+      <!-- Face base -->
+      <ellipse id="face" cx="75" cy="95" rx="50" ry="40" fill="#E6C9B4" />
+
+      <!-- Eyes group -->
+      <g id="eyes">
+        <!-- Left eye -->
+        <circle cx="50" cy="75" r="10" fill="#000" />
+        <circle id="left-eye-pupil" cx="50" cy="75" r="5" fill="#fff" />
+        <!-- Right eye -->
+        <circle cx="100" cy="75" r="10" fill="#000" />
+        <circle id="right-eye-pupil" cx="100" cy="75" r="5" fill="#fff" />
+      </g>
+
+      <!-- Mouth -->
+      <path id="mouth" d="M55 115 Q75 130 95 115" stroke="#000" stroke-width="4" fill="none" />
+    </svg>
+  </div>
+
+  <div id="numbers-container" aria-label="Numbers 1 to 100" role="list">
+    <!-- JS will generate 1 to 100 buttons here -->
+  </div>
+
+  <!-- Pagination controls -->
+  <div id="pagination-controls" aria-label="Pagination Navigation" role="navigation" style="margin-top: 20px;">
+    <button id="prev-btn" aria-label="Previous Page" disabled>← Prev</button>
+    <span id="page-info" style="margin: 0 15px;">Page 1 of 2</span>
+    <button id="next-btn" aria-label="Next Page">Next →</button>
+  </div>
+
+  <!-- Howler.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+  background: #f9f6e0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  padding: 30px 10px;
+  margin: 0;
+}
+h1 {
+  color: #38b6ff;
+  margin-bottom: 30px;
+}
+
+/* Bear container */
+#bear-container {
+  margin: 0 auto 40px;
+  width: 150px;
+  height: 150px;
+  user-select: none;
+}
+
+#numbers-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+  gap: 15px;
+}
+
+.number-btn {
+  background: #ffe259;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 7px #ccc;
+  color: #000;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+  height: 55px;
+  outline: none;
+  user-select: none;
+  transition: background-color 0.15s, transform 0.15s;
+}
+
+.number-btn:active {
+  background: #ff87ab;
+  transform: scale(1.1);
+}
+
+/* Animation classes for bear face */
+
+.mouth-move {
+  animation: mouth-move 0.5s infinite alternate;
+}
+
+.eye-blink {
+  animation: eye-blink 0.3s infinite alternate;
+}
+
+@keyframes mouth-move {
+  0% {
+    d: path("M55 115 Q75 130 95 115");
+  }
+  100% {
+    d: path("M55 115 Q75 140 95 115");
+  }
+}
+
+@keyframes eye-blink {
+  0% {
+    r: 5;
+  }
+  50% {
+    r: 1;
+  }
+  100% {
+    r: 5;
+  }
+}
+
+/* Pagination Controls */
+#pagination-controls button {
+  background: #38b6ff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+#pagination-controls button:disabled {
+  background: #a0cfff;
+  cursor: default;
+}
+
+#pagination-controls button:hover:not(:disabled) {
+  background: #1a8cff;
+}
